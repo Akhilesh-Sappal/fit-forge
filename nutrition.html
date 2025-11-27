@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FIT FORGE - Nutrition</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+        <!-- Fullscreen background video -->
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="bg1.mp4" type="video/mp4">
+  <!-- Fallback text -->
+  Your browser does not support HTML5 video.
+</video>
+
+
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="Logo.png" alt="FIT FORGE logo">
+      <span class="site-name">FIT FORGE</span>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="workouts.html">Workouts</a>
+      <a href="nutrition.html">Nutrition</a>
+      <a href="weekly-plans.html">Weekly Plans</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
+    <h1 class="page-title">Nutrition Plans</h1>
+
+    <!-- Switch buttons -->
+    <div class="diet-switch">
+      <button id="btn-veg" class="diet-btn active">Vegetarian Plan</button>
+      <button id="btn-nonveg" class="diet-btn">Non‑Vegetarian Plan</button>
+    </div>
+
+    <!-- Vegetarian plan -->
+    <section id="veg-plan" class="diet-plan">
+      <h2>Vegetarian Diet Plan</h2>
+      <ul>
+        <li><strong>Breakfast:</strong> Oats with milk, banana, mixed nuts</li>
+        <li><strong>Mid‑Morning:</strong> Greek yogurt with honey</li>
+        <li><strong>Lunch:</strong> Brown rice, dal, paneer, salad</li>
+        <li><strong>Evening Snack:</strong> Fruit bowl and handful of almonds</li>
+        <li><strong>Dinner:</strong> Chapati, vegetable curry, lentil soup</li>
+      </ul>
+    </section>
+
+    <!-- Non‑vegetarian plan -->
+    <section id="nonveg-plan" class="diet-plan hidden">
+      <h2>Non‑Vegetarian Diet Plan</h2>
+      <ul>
+        <li><strong>Breakfast:</strong> Scrambled eggs, whole‑wheat toast, fruit</li>
+        <li><strong>Mid‑Morning:</strong> Whey protein shake</li>
+        <li><strong>Lunch:</strong> Grilled chicken, brown rice, vegetables</li>
+        <li><strong>Evening Snack:</strong> Boiled eggs and nuts</li>
+        <li><strong>Dinner:</strong> Fish or chicken with salad and soup</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // Simple toggle between veg / non‑veg
+    const btnVeg = document.getElementById('btn-veg');
+    const btnNonVeg = document.getElementById('btn-nonveg');
+    const vegPlan = document.getElementById('veg-plan');
+    const nonvegPlan = document.getElementById('nonveg-plan');
+
+    btnVeg.addEventListener('click', () => {
+      btnVeg.classList.add('active');
+      btnNonVeg.classList.remove('active');
+      vegPlan.classList.remove('hidden');
+      nonvegPlan.classList.add('hidden');
+    });
+
+    btnNonVeg.addEventListener('click', () => {
+      btnNonVeg.classList.add('active');
+      btnVeg.classList.remove('active');
+      nonvegPlan.classList.remove('hidden');
+      vegPlan.classList.add('hidden');
+    });
+  </script>
+
+</body>
+</html>
